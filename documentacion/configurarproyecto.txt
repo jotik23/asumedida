@@ -1,0 +1,35 @@
+Como instalar en windows:
+https://www.youtube.com/watch?v=fLhgMJhMg0k
+
+Descargar recursos:
+https://getcomposer.org/download/
+http://laravel.com/docs/4.2/installation
+
+Como crear un proyecto en laravel:
+http://laravel.com/docs/4.2/installation
+
+Para hacer scaffold, se usan los siguientes complementos:
+https://github.com/JeffreyWay/Laravel-4-Generators
+https://github.com/wdollar/Laravel-4-Generators-Bootstrap-3
+- El primero permite general el scaffold en laravel y el segundo proporciona la capa de presentación
+
+Se agrega en composer.json:
+"require-dev": {
+    "way/generators": "~2.0",
+    "dollar/generators": "dev-master"
+}
+
+Entrar por cmd en el proyecto y ejecutar: composer update
+
+Agregar en "app/config/app.php" las sentencias:
+'Way\Generators\GeneratorsServiceProvider',
+'Dollar\Generators\GeneratorsServiceProvider',
+
+Habilitar debug y configurar base de datos.
+
+Para generar el scaffold se puede usar la siguiente instrucción por cmd:
+php artisan generate:scaffold category --fields="nombre:string, descripcion:text, foto:string, padre:integer"
+
+actualizar base de datos con: php artisan migrate
+
+Entrar al proyecto con la ruta: http://localhost/asumedida/public/categories
