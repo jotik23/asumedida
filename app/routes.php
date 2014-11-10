@@ -11,10 +11,13 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', 'InicioController@index');
 
 
 Route::resource('categories', 'CategoriesController');
+
+Route::resource('providers', 'ProvidersController');
+
+Route::resource('presentationtypes', 'PresentationtypesController');
+
+Route::resource('products', 'ProductsController');

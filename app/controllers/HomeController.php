@@ -17,7 +17,10 @@ class HomeController extends BaseController {
 
 	public function showWelcome()
 	{
-		return View::make('hello');
+
+		$categoria = Category::where('padre', '=', 0);
+		print_r($categoria);
+		return View::make('hello', compact('categoria'));
 	}
 
 }
